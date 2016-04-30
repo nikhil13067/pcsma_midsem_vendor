@@ -1,0 +1,49 @@
+<android.support.v7.widget.CardView
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/card">
+    <RelativeLayout
+        android:layout_height="140dp"
+        android:layout_width="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Order1"
+            android:id="@+id/card_order_number"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Price"
+            android:id="@+id/card_order_price"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Date-Time"
+            android:id="@+id/card_order_date"
+            android:layout_below="@+id/card_order_number"
+            android:layout_alignParentEnd="true" />
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New ToggleButton"
+            android:id="@+id/toggleButton_order"
+            android:layout_below="@+id/card_order_price"
+            android:visibility="invisible"
+            android:layout_alignEnd="@+id/card_order_date"
+            android:checked="false" />
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
