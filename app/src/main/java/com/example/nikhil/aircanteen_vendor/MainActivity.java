@@ -1,10 +1,9 @@
-package com.example.nikhil.aircanteen_customer;
+package com.example.nikhil.aircanteen_vendor;
 
-import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -12,7 +11,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ListView;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -22,8 +23,12 @@ public class MainActivity extends BaseNavigationDrawer {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     ArrayList<Item> sampleItems;
-    private ArrayList<String> countries;
+    private TextView item_name, item_price, item_time,item_quantity;
+    private Button button_decrement,button_increment;
+    private ImageView item_image,veg_image;
+    static ArrayList<Item> selectedItems;
 
+    static String ROOT_URL = "  ";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +45,35 @@ public class MainActivity extends BaseNavigationDrawer {
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        selectedItems = new ArrayList<>();
 
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendPostToServer();
+            }
+        });
+        sampleItems = new ArrayList<>();
         sampleItems = createSampleData();
         initViews(sampleItems);
+
+        item_name = (TextView)findViewById(R.id.card_item_name);
+        item_price = (TextView)findViewById(R.id.item_price);
+        item_time = (TextView)findViewById(R.id.item_time);
+        /*item_quantity = (TextView)findViewById(R.id.quantity_text_view);
+        button_decrement = (Button)findViewById(R.id.button_decrement);
+        button_increment = (Button)findViewById(R.id.button_increment);*/
+        item_image = (ImageView)findViewById(R.id.card_tem_image);
+        veg_image = (ImageView)findViewById(R.id.item_veg);
+
+
+    }
+
+    private void sendPostToServer() {
+
+    }
+    private void getItemsFromServer(){
 
     }
 
@@ -67,7 +98,7 @@ public class MainActivity extends BaseNavigationDrawer {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
 
-        RecyclerView.Adapter adapter = new DataAdapter(sampleItems);
+        RecyclerView.Adapter adapter = new DataAdapterItems(sampleItems);
         recyclerView.setAdapter(adapter);
 
         recyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {

@@ -1,4 +1,4 @@
-package com.example.nikhil.aircanteen_customer;
+package com.example.nikhil.aircanteen_vendor;
 
 import org.junit.Test;
 

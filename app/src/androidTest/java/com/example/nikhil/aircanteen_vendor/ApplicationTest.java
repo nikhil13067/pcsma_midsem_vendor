@@ -1,4 +1,4 @@
-package com.example.nikhil.aircanteen_customer;
+package com.example.nikhil.aircanteen_vendor;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

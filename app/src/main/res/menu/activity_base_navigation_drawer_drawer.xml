@@ -5,27 +5,27 @@
         <item
             android:id="@+id/new_order"
             android:icon="@drawable/ic_menu_camera"
-            android:title="New Order" />
+            android:title="Items available" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_past_orders"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="Pending orders" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_complete"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:title="Completed orders" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_users"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Tools" />
+            android:title="Users" />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/nav_add_item"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="Add new Item" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"

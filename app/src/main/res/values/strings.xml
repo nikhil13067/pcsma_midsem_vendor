@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">AirCanteen_customer</string>
-    <string name="title_activity_base_navigation_drawer">BaseNavigationDrawer</string>
+    <string name="app_name">AirCanteen_Vendor</string>
+    <string name="title_activity_base_navigation_drawer">AirCanteen_Vendor</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="title_activity_cart">CartActivity</string>
+    <string name="total_price">total</string>
 </resources>
